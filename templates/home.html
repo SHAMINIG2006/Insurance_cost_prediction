@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Insurance Cost Predictor</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <header class="hero">
+      <h1>Insurance Cost Predictor</h1>
+      <p>Estimate annual medical insurance charges using machine learning </p>
+    </header>
+
+    <main>
+      <form id="predictForm" action="/predict" method="post" class="form-card">
+        <div class="grid">
+          <label>Age
+            <input type="number" name="age" min="0" max="120" required>
+          </label>
+
+          <label>Sex
+            <select name="sex">
+              <option value="male">Male</option>
+              <option value="female" selected>Female</option>
+            </select>
+          </label>
+
+          <label>BMI
+            <input type="number" name="bmi" step="0.1" min="10" max="70" required>
+          </label>
+
+          <label>Children
+            <input type="number" name="children" min="0" max="10" value="0" required>
+          </label>
+
+          <label>Smoker
+            <select name="smoker">
+              <option value="no">No</option>
+              <option value="yes">Yes</option>
+            </select>
+          </label>
+
+          <label>Region
+            <select name="region">
+              <option value="southeast" selected>Southeast</option>
+              <option value="southwest">Southwest</option>
+              <option value="northeast">Northeast</option>
+              <option value="northwest">Northwest</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="actions">
+          <button class="btn" type="submit">Predict</button>
+          <button class="btn ghost" id="ajaxBtn" type="button">Predict (AJAX)</button>
+        </div>
+      </form>
+
+      <div id="resultCard" class="card hidden">
+        <h2>Predicted Annual Charge</h2>
+        <div class="result">₹ <span id="amount">0</span></div>
+      </div>
+    </main>
+
+    <footer class="foot">Hackathon demo • Insurance Cost Prediction</footer>
+  </div>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

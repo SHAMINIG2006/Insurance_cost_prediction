@@ -1,0 +1,24 @@
+/* static/style.css - clean, modern UI */
+:root{--bg:#f4f7fb;--card:#ffffff;--accent:#4f46e5;--muted:#6b7280}
+*{box-sizing:border-box;font-family:Inter,system-ui,Segoe UI,Arial}
+body{margin:0;background:linear-gradient(180deg,#eef2ff 0%, #f8fafc 100%);color:#111}
+.container{max-width:900px;margin:28px auto;padding:18px}
+.hero{text-align:center;padding:20px 10px}
+.hero h1{margin:.2rem 0;font-size:1.9rem;color:var(--accent)}
+.hero p{margin:0;color:var(--muted)}
+
+.form-card{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 6px 18px rgba(12,15,30,0.06);margin-bottom:18px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+label{display:flex;flex-direction:column;font-size:.9rem;color:#333}
+input,select{margin-top:6px;padding:10px;border-radius:8px;border:1px solid #e6e9ef;font-size:1rem}
+
+.actions{display:flex;gap:10px;justify-content:flex-end;margin-top:12px}
+.btn{background:var(--accent);color:#fff;padding:10px 16px;border-radius:10px;border:none;cursor:pointer}
+.btn.ghost{background:transparent;color:var(--accent);border:1px solid #dfe3ff}
+
+.card{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 6px 18px rgba(12,15,30,0.06)}
+.hidden{display:none}
+.result{font-size:1.6rem;font-weight:700;color:#111}
+.big{font-size:2rem;font-weight:700;margin:12px 0}
+.foot{text-align:center;color:var(--muted);padding:10px;margin-top:12px}
+@media(max-width:420px){.actions{flex-direction:column}}
